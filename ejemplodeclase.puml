@@ -1,0 +1,28 @@
+@startuml
+abstract class Paleta {
+    - sabor : str
+    - precio : float
+    + mostrarInfo() : str
+}
+
+interface Vendible {
+    + vender() : str
+}
+
+class PaletaAgua {
+    - baseAgua : bool
+    + mostrarInfo() : str
+    + vender() : str
+}
+
+class PaletaCrema {
+    - baseLeche : bool
+    + mostrarInfo() : str
+    + vender() : str
+}
+
+Paleta <|-- PaletaAgua
+Paleta <|-- PaletaCrema
+Vendible <|.. PaletaAgua
+Vendible <|.. PaletaCrema
+@enduml
